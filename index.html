@@ -5,7 +5,7 @@
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.2/aframe/build/aframe-ar.min.js"></script>
 </head>
 <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+    <a-scene embedded arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;">
         <a-marker preset="custom" type="pattern" url="pattern-webavr01.patt">
             <a-entity geometry="primitive: plane; width: 2; height: 1" 
                       material="shader: html; target: #vimeo-container"
