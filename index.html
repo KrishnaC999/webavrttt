@@ -5,26 +5,16 @@
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.2/aframe/build/aframe-ar.min.js"></script>
 </head>
 <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs>
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
         <a-marker preset="custom" type="pattern" url="marker.patt">
-            <a-entity 
-                geometry="primitive: plane; width: 2; height: 1"
-                material="shader: html; target: #vimeo-video"
-                position="0 1 -2">
-            </a-entity>
+            <a-video 
+                src="https://player.vimeo.com/video/1072129381?autoplay=1&loop=1&muted=1" 
+                position="0 1 -2" 
+                width="2" 
+                height="1">
+            </a-video>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
-
-    <div style="display: none;">
-        <iframe 
-            id="vimeo-video"
-            src="https://player.vimeo.com/video/1072129381?autoplay=1&loop=1&muted=1"
-            width="640" 
-            height="360"
-            frameborder="0" 
-            allow="autoplay; fullscreen">
-        </iframe>
-    </div>
 </body>
 </html>
