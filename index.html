@@ -7,14 +7,23 @@
 <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
         <a-marker preset="custom" type="pattern" url="marker.patt">
-            <a-video 
-                src="https://player.vimeo.com/video/1072129381?autoplay=1&loop=1&muted=1" 
-                position="0 1 -2" 
-                width="2" 
-                height="1">
-            </a-video>
+            <a-entity geometry="primitive: plane; width: 2; height: 1" 
+                      material="shader: html; target: #vimeo-player"
+                      position="0 1 -2">
+            </a-entity>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
+
+    <!-- Hidden Vimeo Player -->
+    <div style="display: none;">
+        <iframe id="vimeo-player"
+                src="https://player.vimeo.com/video/1072129381?autoplay=1&loop=1&muted=1"
+                width="640" 
+                height="360"
+                frameborder="0" 
+                allow="autoplay; fullscreen">
+        </iframe>
+    </div>
 </body>
 </html>
